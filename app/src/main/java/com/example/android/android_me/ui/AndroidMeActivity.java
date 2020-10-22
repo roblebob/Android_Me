@@ -32,6 +32,7 @@ public class AndroidMeActivity extends AppCompatActivity {
         // TODO (3) Show the first image in the list of head images
             // Soon, you'll update this image display code to show any image you want
 
+    BodyPartFragment mBodyPartFragment;
 
 
     @Override
@@ -40,5 +41,6 @@ public class AndroidMeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_android_me);
 
         // TODO (5) Create a new BodyPartFragment instance and display it using the FragmentManager
+        mBodyPartFragment = new BodyPartFragment();
     }
 }
