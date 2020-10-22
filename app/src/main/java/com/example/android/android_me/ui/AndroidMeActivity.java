@@ -33,6 +33,10 @@ public class AndroidMeActivity extends AppCompatActivity {
 
         // TODO (5) Create a new BodyPartFragment instance and display it using the FragmentManager
         BodyPartFragment bodyPartFragment  = new BodyPartFragment();
-        FragmentManager.
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager
+                .beginTransaction()
+                .add(R.id.body_part_fragment_container, bodyPartFragment)
+                .commit();
     }
 }
