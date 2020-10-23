@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android_Me</string>
+    <string name="list_error">List was not found!</string>
 </resources>
