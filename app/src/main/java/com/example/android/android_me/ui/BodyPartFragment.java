@@ -33,24 +33,19 @@ import java.util.List;
 
 public class BodyPartFragment extends Fragment {
 
+    private final String TAG = this.getClass().getSimpleName();
 
     // TODO☑ (1) Create a setter method and class variable to set and store of a list of image resources
-    private ArrayList<Integer> mImageResourceIdList;
-    public ArrayList<Integer> getImageResourceIdList() {
-        return mImageResourceIdList;
-    }
-    public void setImageResourceIdList(ArrayList<Integer> mImageResourceIdList) {
-        this.mImageResourceIdList = mImageResourceIdList;
+    private List<Integer> mImageResourceIdList;
+    public void setImageResourceIdList(List<Integer> imageResourceIdList) {
+        this.mImageResourceIdList = imageResourceIdList;
     }
 
 
     // TODO☑ (2) Create another setter method and variable to track and set the index of the list item to display
     //  ex. index = 0 is the first image id in the given list , index 1 is the second, and so on
-    public int getIndex() {
-        return mIndex;
-    }
-    public void setIndex(int mIndex) {
-        this.mIndex = mIndex;
+    public void setIndex(int index) {
+        this.mIndex = index;
     }
     int mIndex;
 
@@ -73,14 +68,14 @@ public class BodyPartFragment extends Fragment {
         ImageView imageView = (ImageView) rootView.findViewById(R.id.body_part_image_view);
 
 
-        // TODO (3) If a list of image ids exists, set the image resource to the correct item in that list
+        // TODO☑ (3) If a list of image ids exists, set the image resource to the correct item in that list
         // Otherwise, create a Log statement that indicates that the list was not found
-        if (getImageResourceIdList() != null) {
+        if (mImageResourceIdList != null) {
 
-            imageView.setImageResource( getImageResourceIdList().get( getIndex()));
+            imageView.setImageResource( mImageResourceIdList.get( mIndex));
 
         } else {
-            Log.e(this.getClass().getSimpleName(), getString(R.string.list_error));
+            Log.e(TAG, getString(R.string.list_error));
         }
 
 
