@@ -34,7 +34,7 @@ public class AndroidMeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
 
-        // TODO (5) Only create new fragments when there is no previously saved state
+        // TODO☑ (5) Only create new fragments when there is no previously saved state
         if (savedInstanceState == null) {
             // Create a new head BodyPartFragment
             BodyPartFragment headFragment = new BodyPartFragment();

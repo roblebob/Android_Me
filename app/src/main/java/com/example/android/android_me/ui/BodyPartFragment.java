@@ -34,7 +34,7 @@ import java.util.List;
 
 public class BodyPartFragment extends Fragment {
 
-    // TODO (3) Create final Strings to store state information about the list of images and list index
+    // TODO☑ (3) Create final Strings to store state information about the list of images and list index
     public final static String IMAGE_IDS = "image_ids";
     public final static String LIST_INDEX = "list_index";
 
@@ -73,24 +73,19 @@ public class BodyPartFragment extends Fragment {
         // Otherwise, create a Log statement that indicates that the list was not found
         if(mImageIds != null){
 
-            // TODO (1) Set a click listener on the image view and on a click increment the list index and set the image resource
+            // TODO☑ (1) Set a click listener on the image view and on a click increment the list index and set the image resource
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (mListIndex < mImageIds.size() - 1)
                         mListIndex++;
-                    else // TODO (2) If you reach the end of a list of images, set the list index back to 0 (the first item in the list)
+                    else // TODO☑ (2) If you reach the end of a list of images, set the list index back to 0 (the first item in the list)
                         mListIndex = 0;
 
                     // Set the image resource to the list item at the stored index
                     imageView.setImageResource(mImageIds.get(mListIndex));
                 }
             });
-
-
-               mListIndex = 0;
-
-
         } else {
             Log.v(TAG, "This fragment has a null list of image id's");
         }
@@ -110,7 +105,7 @@ public class BodyPartFragment extends Fragment {
         mListIndex = index;
     }
 
-    // TODO (4) Override onSaveInstanceState and save the current state of this fragment
+    // TODO☑ (4) Override onSaveInstanceState and save the current state of this fragment
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle currentState) {
