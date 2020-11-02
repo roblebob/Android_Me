@@ -73,7 +73,7 @@ public class MasterListFragment extends Fragment {
 
         // Create the adapter
         // This adapter takes in the context and an ArrayList of ALL the image resources to display
-        MasterListAdapter mAdapter = new MasterListAdapter(getContext(), AndroidImageAssets.getAll());
+        MasterListAdapter mAdapter = new MasterListAdapter( getContext(), AndroidImageAssets.getAll());
 
         // Set the adapter on the GridView
         gridView.setAdapter(mAdapter);

@@ -16,8 +16,11 @@
 
 package com.example.android.android_me.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.android.android_me.R;
@@ -26,6 +29,11 @@ import com.example.android.android_me.R;
 // Implement the MasterListFragment callback, OnImageClickListener
 public class MainActivity extends AppCompatActivity implements MasterListFragment.OnImageClickListener{
 
+    public static final String TAG = MainActivity.class.getSimpleName();
+
+    private int headIndex;
+    private int bodyIndex;
+    private int legIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +47,26 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
         // Create a Toast that displays the position that was clicked
         Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
 
-        // TODO (2) Based on where a user has clicked, store the selected list index for the head, body, and leg BodyPartFragments
+        // TODO☑ (2) Based on where a user has clicked, store the selected list index for the head, body, and leg BodyPartFragments
+        if (position < 12) {
+                headIndex = position % 12;
+        } else if (12 <= position  && position < 24) {
+                bodyIndex = position % 12;
+        } else if (24 <= position && position < 36) {
+                legIndex = position % 12;
+        } else {
+            Log.e(TAG, "ERROR !!!   Position is out of bounds:  " + position);
+        }
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("head_index", headIndex);
+        bundle.putInt("body_index", bodyIndex);
+        bundle.putInt("leg_index", legIndex);
+
+        Intent intent = new Intent();
+        intent.putExtra("indicesBundle", bundle);
+        intent.
+
 
         // TODO (3) Put this information in a Bundle and attach it to an Intent that will launch an AndroidMeActivity
 
