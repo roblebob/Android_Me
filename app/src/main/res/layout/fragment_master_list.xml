@@ -12,11 +12,16 @@
 
 <!-- GridView that displays AndroidMe images -->
 <!-- TODO☑ (1) Turn this into a LinearLayout and add a "Next" button at the bottom of the gridview -->
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:isScrollContainer="true"
     >
 
     <GridView
@@ -25,7 +30,7 @@
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:columnWidth="180dp"
-        android:gravity="center"
+        android:gravity="center|top"
         android:horizontalSpacing="8dp"
         android:numColumns="3"
         android:padding="16dp"
@@ -36,7 +41,8 @@
     <Button
         android:id="@+id/next_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="120dp"
+        android:visibility="visible"
         android:text="@string/next_button_text"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
