@@ -21,6 +21,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.android.android_me.R;
@@ -58,20 +60,29 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
             Log.e(TAG, "ERROR !!!   Position is out of bounds:  " + position);
         }
 
+
+        // TODO☑ (3) Put this information in a Bundle and attach it to an Intent that will launch an AndroidMeActivity
         Bundle bundle = new Bundle();
         bundle.putInt("head_index", headIndex);
         bundle.putInt("body_index", bodyIndex);
         bundle.putInt("leg_index", legIndex);
 
-        Intent intent = new Intent();
-        intent.putExtra("indicesBundle", bundle);
-        intent.
+        Intent intent = new Intent(this, AndroidMeActivity.class);
+        intent.putExtras( bundle);
 
 
-        // TODO (3) Put this information in a Bundle and attach it to an Intent that will launch an AndroidMeActivity
 
-        // TODO (4) Get a reference to the "Next" button and launch the intent when this button is clicked
 
+
+        // TODO☑ (4) Get a reference to the "Next" button and launch the intent when this button is clicked
+        Button button = (Button) findViewById(R.id.next_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(intent);
+            }
+        });
     }
 
 }
