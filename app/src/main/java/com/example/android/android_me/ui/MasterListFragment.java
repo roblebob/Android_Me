@@ -79,13 +79,8 @@ public class MasterListFragment extends Fragment {
         gridView.setAdapter(mAdapter);
 
         // Set a click listener on the gridView and trigger the callback onImageSelected when an item is clicked
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                // Trigger the callback method and pass in the position that was clicked
-                mCallback.onImageSelected(position);
-            }
-        });
+        // Trigger the callback method and pass in the position that was clicked
+        gridView.setOnItemClickListener(  (adapterView, view, position, l) ->  mCallback.onImageSelected( position));
 
         // Return the root view
         return rootView;
