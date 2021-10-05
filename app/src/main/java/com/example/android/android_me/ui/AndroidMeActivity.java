@@ -31,12 +31,11 @@ public class AndroidMeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
 
-        // TODO (5) Create a new BodyPartFragment instance and display it using the FragmentManager
-        BodyPartFragment bodyPartFragment  = new BodyPartFragment();
+        // TODO✓(5) Create a new BodyPartFragment instance and display it using the FragmentManager
+        BodyPartFragment headFragment  = new BodyPartFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager
-                .beginTransaction()
-                .add(R.id.body_part_fragment_container, bodyPartFragment)
+        fragmentManager.beginTransaction()
+                .add(R.id.head_container, headFragment)
                 .commit();
     }
 }

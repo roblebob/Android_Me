@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android_Me</string>
+    <string name="fragment_body_part_image_view_content_description">Fragment layout that displays an Android-Me body part image</string>
 </resources>
