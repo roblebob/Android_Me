@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.android.android_me.R;
@@ -53,7 +54,7 @@ public class BodyPartFragment extends Fragment {
      * Inflates the fragment layout file and sets the correct resource for the image to display
      */
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         // Load the saved state (the list of images and list index) if there is one
         if(savedInstanceState != null) {
@@ -74,19 +75,16 @@ public class BodyPartFragment extends Fragment {
             imageView.setImageResource(mImageIds.get(mListIndex));
 
             // Set a click listener on the image view
-            imageView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Increment position as long as the index remains <= the size of the image ids list
-                    if(mListIndex < mImageIds.size()-1) {
-                        mListIndex++;
-                    } else {
-                        // The end of list has been reached, so return to beginning index
-                        mListIndex = 0;
-                    }
-                    // Set the image resource to the new list item
-                    imageView.setImageResource(mImageIds.get(mListIndex));
+            imageView.setOnClickListener(view -> {
+                // Increment position as long as the index remains <= the size of the image ids list
+                if(mListIndex < mImageIds.size()-1) {
+                    mListIndex++;
+                } else {
+                    // The end of list has been reached, so return to beginning index
+                    mListIndex = 0;
                 }
+                // Set the image resource to the new list item
+                imageView.setImageResource(mImageIds.get(mListIndex));
             });
 
         } else {
