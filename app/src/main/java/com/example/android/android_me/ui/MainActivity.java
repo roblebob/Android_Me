@@ -62,18 +62,18 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
 
 
         // TODO☑ (3) Put this information in a Bundle and attach it to an Intent that will launch an AndroidMeActivity
-        Bundle bundle = new Bundle();
-        bundle.putInt("head_index", headIndex);
-        bundle.putInt("body_index", bodyIndex);
-        bundle.putInt("leg_index", legIndex);
+        Bundle b = new Bundle();
+        b.putInt("headIndex", headIndex);
+        b.putInt("bodyIndex", bodyIndex);
+        b.putInt("legIndex", legIndex);
 
-        Intent intent = new Intent(this, AndroidMeActivity.class);
-        intent.putExtras( bundle);
+        final Intent intent = new Intent(this, AndroidMeActivity.class);
+        intent.putExtras( b);
 
 
         // TODO☑ (4) Get a reference to the "Next" button and launch the intent when this button is clicked
-        Button button = (Button) findViewById(R.id.next_button);
-        button.setOnClickListener( (v) -> startActivity(intent));
+        Button nextButton = (Button) findViewById(R.id.next_button);
+        nextButton.setOnClickListener( (view) -> startActivity(intent));
     }
 
 }

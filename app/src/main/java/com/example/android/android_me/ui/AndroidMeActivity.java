@@ -48,9 +48,9 @@ public class AndroidMeActivity extends AppCompatActivity {
             bodyFragment.setImageIds(AndroidImageAssets.getBodies());
             legFragment.setImageIds(AndroidImageAssets.getLegs());
 
-            headFragment.setListIndex(  bundle.getInt("head_index"));
-            bodyFragment.setListIndex(  bundle.getInt("body_index"));
-            legFragment .setListIndex(  bundle.getInt("leg_index"));
+            headFragment.setListIndex(  bundle.getInt("headIndex"));
+            bodyFragment.setListIndex(  bundle.getInt("bodyIndex"));
+            legFragment .setListIndex(  bundle.getInt("legIndex"));
 
             // Add the fragment to its container using a FragmentManager and a Transaction
             FragmentManager fragmentManager = getSupportFragmentManager();
