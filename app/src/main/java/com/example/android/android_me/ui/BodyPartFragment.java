@@ -33,7 +33,7 @@ import java.util.List;
 
 public class BodyPartFragment extends Fragment {
 
-    // TODO☑ (3) Create final Strings to store state information about the list of images and list index
+    // TODO✓(3) Create final Strings to store state information about the list of images and list index
     public static final String IMAGE_ID_LIST = "image_ids";
     public static final String LIST_INDEX = "list_index";
 
@@ -74,13 +74,13 @@ public class BodyPartFragment extends Fragment {
 
             imageView.setImageResource(mImageIds.get(mListIndex));
 
-            // TODO☑ (1) Set a click listener on the image view and on a click increment the list index and set the image resource
+            // TODO✓(1) Set a click listener on the image view and on a click increment the list index and set the image resource
             imageView.setOnClickListener(view -> {
 
                 if (mListIndex < mImageIds.size() - 1) {
                     mListIndex++;
                 } else {
-                    // TODO☑ (2) If you reach the end of a list of images, set the list index back to 0 (the first item in the list)
+                    // TODO✓(2) If you reach the end of a list of images, set the list index back to 0 (the first item in the list)
                     mListIndex = 0;
                 }
                 // Set the image resource to the list item at the stored index
@@ -107,7 +107,7 @@ public class BodyPartFragment extends Fragment {
     }
 
 
-    // TODO☑ (4) Override onSaveInstanceState and save the current state of this fragment
+    // TODO✓(4) Override onSaveInstanceState and save the current state of this fragment
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle currentState) {
