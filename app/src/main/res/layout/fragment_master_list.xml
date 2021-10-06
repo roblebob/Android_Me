@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--// TODO (1) Create a fragment_master_list.xml layout file to display all our images; this should be a GridView -->
+<!--// TODO✓(1) Create a fragment_master_list.xml layout file to display all our images; this should be a GridView -->
 <GridView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/images_grid_view"
